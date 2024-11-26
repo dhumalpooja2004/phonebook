@@ -4,6 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phonebook</title>
+    <style>
+        body {
+            background-color: #bddcfb;
+            background-image: linear-gradient(62deg, #bff998 0%, #E0C3FC 100%);
+
+        }
+
+        .in-box {
+            width: 500px;
+            padding: 8px 10px;
+            font-size: 23px;
+            margin-left: 250px;
+        }
+
+        .btn {
+            width: 200px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #000;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            box-shadow: 1px 1px 2px 2px rgb(122, 121, 121);
+        }
+        .result-text{
+            font-size: 28px;
+            font-family: cursive;
+            text-align: center;
+        }
+        .app-heading{
+            margin-top: 100px;
+            text-align: center;
+        }
+        .phone-img{
+            height: 300px;
+            display: block;
+            margin: 30px auto;
+        }
+    </style>
+
 </head>
 <body>
     <h1 class="app-heading">📕📘Basic PhoneBook</h1>
@@ -13,15 +54,29 @@
     <img src="download.png" class="phone-img">
     <script>
         const contacts = {
-            deepali: "8888132548",
-            sameer: "9524613725",
+            payal: "8888132548",
+            sanchita: "9524613725",
             archana: "7081245680",
             vidya: "5214697234",
             pooja: "9874253158",
             arpita: "8726485135",
-            sanchit: "7325486241",
-            pradip: "8742563189"
+            sunita: "7325486241",
+            dipali: "8742563189"
         }
+        function search() {
+            const searchInput = document.getElementById("searchBox");
+            const query = searchInput.value.toLowerCase();
+            const number = contacts[query]
+            const result = document.getElementById("result");
+
+            if(number) {
+                result.innerText = `Mobile number of ${query} is ${number}`;
+            }
+            else{
+                result.innerText = `Contact not found!!`
+            }
+        }
+
    </script>
 
 </body>
